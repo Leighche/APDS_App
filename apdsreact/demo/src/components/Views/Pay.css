@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.Pay-background {
+    background-image: url('https://images.unsplash.com/photo-1493510296082-689a0d42701b?q=80&w=3281&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure it covers the full viewport */
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.pay-container {
+    text-align: center; /* Center align the text */
+    padding: 20px; /* Add some padding around the container */
+    border-radius: 15px; /* Round the corners */
+    max-width: 600px; /* Limit max width for the form */
+    margin: auto; /* Center the form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0); /* Add shadow for depth */
+}
+
+h1 {
+    color: #477f4b;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Space between form groups */
+    text-align: left; /* Align text to the left */
+}
+
+label {
+    font-weight: bold; /* Bold label text */
+}
+
+input {
+    width: 96%; /* Full width for inputs and selects */
+    padding: 10px; /* Add some padding */
+    border-radius: 5px; /* Round corners */
+    border: 1px solid #ccc; /* Border style */
+    font-size: 16px; /* Font size */
+}
+
+select {
+    width: 100%; /* Full width for inputs and selects */
+    padding: 10px; /* Add some padding */
+    border-radius: 5px; /* Round corners */
+    border: 1px solid #ccc; /* Border style */
+    font-size: 16px; /* Font size */
+}
+
+.submit-button {
+    background-color: #477f4b; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 15px 20px; /* Padding for the button */
+    border-radius: 5px; /* Round corners */
+    font-size: 18px; /* Font size */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.submit-button:hover {
+    background-color: #3a5a3f; /* Darker button color on hover */
+}
