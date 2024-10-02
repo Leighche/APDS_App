@@ -112,6 +112,38 @@ npm start
 
 `Visit http://localhost:3000 to access the app.`
 
+
+## APP UI
+
+<table>
+  <tr>
+    <td>
+      <img width="400" src="https://github.com/user-attachments/assets/64218be4-5471-45e9-85ad-ec097568ed4d" alt="Screenshot 2024-10-02 at 05 38 55"/>
+      <p>Description for Image 1</p>
+    </td>
+    <td>
+      <img width="400" src="https://github.com/user-attachments/assets/edb3bb85-2763-4ec3-86f7-52dbc8374ff8" alt="Screenshot 2024-10-02 at 05 40 25"/>
+      <p>Description for Image 2</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img width="400" src="https://github.com/user-attachments/assets/0a0cadec-7e96-45bf-a01f-3c7f9cd9c5b1" alt="Screenshot 2024-10-02 at 05 40 44"/>
+      <p>Description for Image 3</p>
+    </td>
+    <td>
+      <img width="400" src="https://github.com/user-attachments/assets/de53e8fb-6844-4e91-9d62-467caee9e6ce" alt="Screenshot 2024-10-02 at 05 40 55"/>
+      <p>Description for Image 4</p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <img width="400" src="https://github.com/user-attachments/assets/4dce745d-4942-4948-904d-52ae4b7cf912" alt="Screenshot 2024-10-02 at 05 41 09"/>
+      <p>Description for Image 5</p>
+    </td>
+  </tr>
+</table>
+
 ## Usage
 
 ### Customer Portal Usage
