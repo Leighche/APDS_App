@@ -140,7 +140,7 @@ SSL_KEY=your_ssl_key_path
 npm start
 ```
 
-`Visit http://localhost:3000 to access the app.`
+`Visit https://localhost:3000 to access the app.`
 
 
 ## APP UI
