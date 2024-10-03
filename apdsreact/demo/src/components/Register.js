@@ -3,6 +3,11 @@ import axios from 'axios'; // or import your configured axios instance
 import { useNavigate } from 'react-router-dom';
 import './Views/Register.css'; // Import your CSS file
 
+// Create an Axios instance with a base URL
+const axiosInstance = axios.create({
+  baseURL: 'http://localhost:3002/api/auth', // Base URL for the auth API
+});
+
 const Register = () => {
   const [username, setUsername] = useState('');
   const [fullName, setFullName] = useState('');
@@ -33,44 +38,54 @@ const Register = () => {
     let hasError = false;
 
     if (!username) {
-      setUsernameError('Username is required');
-      hasError = true;
+        setUsernameError('Username is required');
+        hasError = true;
     }
 
     if (!fullName) {
-      setFullNameError('Full name is required');
-      hasError = true;
+        setFullNameError('Full name is required');
+        hasError = true;
     }
 
     if (!/^\d{13}$/.test(idNumber)) { // ID number must be 13 digits
-      setIdNumberError('ID number must be 13 digits');
-      hasError = true;
+        setIdNumberError('ID number must be 13 digits');
+        hasError = true;
     }
 
     if (!/^\d+$/.test(accountNumber)) { // Account number must be numeric
-      setAccountNumberError('Account number must be numeric');
-      hasError = true;
+        setAccountNumberError('Account number must be numeric');
+        hasError = true;
     }
 
     if (password.length < 6) { // Example: Minimum password length
-      setPasswordError('Password must be at least 6 characters long');
-      hasError = true;
+        setPasswordError('Password must be at least 6 characters long');
+        hasError = true;
     }
 
     if (password !== confirmPassword) {
-      setConfirmPasswordError('Passwords do not match');
-      hasError = true;
+        setConfirmPasswordError('Passwords do not match');
+        hasError = true;
     }
 
     if (hasError) return; // Stop if there are validation errors
 
+    // Log registration data
+    console.log({ username, fullName, idNumber, accountNumber, password });
+
     try {
-      const response = await axios.post('/api/register', { username, fullName, idNumber, accountNumber, password });
+      const response = await axiosInstance.post('/register', { 
+        username, // Include the username in the request
+        fullName, 
+        idNumber, 
+        accountNumber, 
+        password 
+      });
       if (response.data.message) {
-        navigate('/login');
+          navigate('/login'); // Redirect to login page after successful registration
       }
     } catch (err) {
-      setUsernameError(err.response?.data?.errors[0]?.msg || 'Registration failed');
+        console.error('Registration error:', err);
+        setUsernameError(err.response?.data?.message || 'Registration failed');
     }
   };
 
@@ -80,6 +95,18 @@ const Register = () => {
         <h1>Grow with Thyme</h1>
         <h4>Please create an account</h4>
         <form onSubmit={handleRegister}>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input 
+              type="text" 
+              id="username"
+              placeholder="Username" 
+              value={username} 
+              onChange={(e) => setUsername(e.target.value)} 
+              required 
+            />
+            {usernameError && <p className="error-message">{usernameError}</p>}
+          </div>
           <div className="form-group">
             <label htmlFor="fullName">Full Name</label>
             <input 

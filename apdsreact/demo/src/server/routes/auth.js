@@ -1,57 +1,68 @@
 // server/routes/auth.js
+
 const express = require('express');
-const bcrypt = require('bcrypt'); // Make sure this is installed
-const User = require('../models/User'); // Adjust the path according to your structure
+const bcrypt = require('bcrypt');
+const User = require('../models/User');
 const { validateRegistration, validateLogin, checkValidationResult } = require('../middleware/validation');
+const ExpressBrute = require('express-brute');
 
 const router = express.Router();
 
+// Brute force middleware to protect against too many login/register attempts
+const store = new ExpressBrute.MemoryStore();
+const bruteforce = new ExpressBrute(store, {
+    freeRetries: 5,
+    minWait: 5000,
+    maxWait: 60000,
+    lifetime: 300
+});
+
 // Registration endpoint
-router.post('/register', validateRegistration, checkValidationResult, async (req, res) => {
+router.post('/register', (req, res, next) => {
+    console.log("Received registration request:", req.body);
+    next();
+}, bruteforce.prevent, validateRegistration, checkValidationResult, async (req, res) => {
     const { username, password, fullName, idNumber, accountNumber } = req.body;
 
+    console.log(`Registration attempt for username: ${username}`);
+
     try {
-        // Check if the user already exists
         const existingUser = await User.findOne({ username });
         if (existingUser) {
+            console.log('User already exists');
             return res.status(400).json({ message: 'User already exists' });
         }
 
-        // Hash the password
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        // Create a new user
-        const newUser = new User({ username, password: hashedPassword, fullName, idNumber, accountNumber });
+        const newUser = new User({ username, password, fullName, idNumber, accountNumber });
         await newUser.save();
 
+        console.log(`User registered successfully: ${username}`);
         res.status(201).json({ message: 'User registered successfully' });
     } catch (error) {
-        console.error(error); // Log the error to the console
+        console.error('Error during registration:', error);
         res.status(500).json({ message: 'Server error' });
     }
 });
 
+
 // Login endpoint
-router.post('/login', validateLogin, checkValidationResult, async (req, res) => {
+router.post('/login', bruteforce.prevent, validateLogin, checkValidationResult, async (req, res) => {
     const { username, password } = req.body;
 
     try {
-        // Check if the user exists
         const user = await User.findOne({ username });
         if (!user) {
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
-        // Check password
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
-        // Optionally, return user data or generate a token here
         res.status(200).json({ message: 'Login successful' });
     } catch (error) {
-        console.error(error); // Log the error to the console
+        console.error(error);
         res.status(500).json({ message: 'Server error' });
     }
 });

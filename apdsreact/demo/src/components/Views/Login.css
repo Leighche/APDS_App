@@ -69,6 +69,43 @@ input[type="email"] {
     background-color: #FFAC00;
 }
 
+
+.separator {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin: 20px auto; /* Center the line horizontally */
+    width: 50%; /* Set the width of the line */
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: ""; /* Create an empty element for the line */
+    flex: 1; /* Allow the line to grow */
+    border-top: 1px solid #ccc; /* Create the line with a light color */
+    margin: 0 10px; /* Add spacing around the OR text */
+  }
+  
+
+  
+.btn-secondary {
+    display: block; /* Ensure it behaves like a block element */
+    width: 50%; /* Set the button width */
+    height: 40px; /* Set the button width */
+    padding: 10px; /* Button padding */
+    margin: 30px auto 0; /* Centering the button with margin auto */
+    background-color: #315C94; /* Button background color */
+    color: #fff; /* Text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    text-align: center;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+
 a {
     display: block;
     text-align: center;

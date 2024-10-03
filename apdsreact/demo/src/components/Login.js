@@ -1,19 +1,29 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons'; // Import the icon you want to use
 import './Views/Login.css';
 
 function Login() {
   const [accountNumber, setAccountNumber] = useState('');
-  const [username, setUsername] = useState(''); // Added username state
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/api/login', { accountNumber, username, password });
+      const response = await axios.post('http://localhost:3002/api/auth/login', {
+        accountNumber,
+        username,
+        password
+      });
       alert(response.data.message);
+      navigate('/Home'); // Navigate to /Home on successful login
     } catch (error) {
-      alert('Login failed');
+      console.error('Login error:', error);
+      alert('Login failed: ' + (error.response?.data?.message || 'An unexpected error occurred'));
     }
   };
 
@@ -59,6 +69,14 @@ function Login() {
           <button type="submit" className="btn-primary">Login</button>
         </form>
         <a href="/register">Have an Account? Register?</a>
+        <div className="separator">
+          <span>OR</span>
+        </div> {/* Horizontal line with OR text */}
+        {/* Add a button to navigate to the registration page */}
+        <button onClick={() => navigate('/register')} className="btn-secondary">
+          <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: '8px' }} /> {/* Icon with margin */}
+          Admin Registration
+        </button>
       </div>
     </div>
   );

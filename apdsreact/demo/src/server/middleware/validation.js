@@ -44,6 +44,7 @@ const checkValidationResult = (req, res, next) => {
     next();
 };
 
+
 module.exports = {
     validateRegistration,
     validateLogin,
