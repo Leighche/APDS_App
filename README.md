@@ -228,11 +228,11 @@ We welcome contributions to improve the Thyme Bank International Payment System!
 <div align="right">
        <img src="https://github.com/user-attachments/assets/160fb321-8c18-473b-8962-63eefba43e6b" width="260"/>
 </div>
----
+
 
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-
+-by Leighché Jaikarran
   
