@@ -95,8 +95,24 @@ This is the **Thyme Bank International Payment System** that allows customers to
 ```
 2. Install dependencies:
 ```
-cd thyme-bank
-npm install
+ cd thyme-bank
+
+ npm install
+
+ npm install -g nodemon
+
+ npm install helmet
+
+ npm install express-rate-limit
+
+ npm list mongodb
+
+ npm install express bcrypt express-validator
+
+ npm install express-brute helmet
+
+ npm install bcryptjs
+
 ```
 3. Set up environment variables: Add to the .env file in the root directory and add the following variables:
 ```
