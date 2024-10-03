@@ -234,5 +234,5 @@ We welcome contributions to improve the Thyme Bank International Payment System!
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
--by Leighché Jaikarran
+-by Leighché Jaikarran & helpers
   
