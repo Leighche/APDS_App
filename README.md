@@ -7,6 +7,10 @@ This is the **Thyme Bank International Payment System** that allows customers to
 - **Customer Portal**: For customers to register, log in, and make international payments.
 - **Employee Portal**: For bank employees to review and forward transactions via SWIFT.
 
+<div align="right">
+<img src ="https://media.lordicon.com/icons/wired/flat/2482-ssl-security.gif" width="150"/>
+</div>
+
 ## Table of Contents
 
 - [Features](#features)
@@ -144,7 +148,7 @@ npm start
 <table>
   <tr>
     <td>
-      <img width="400" src="https://github.com/user-attachments/assets/64218be4-5471-45e9-85ad-ec097568ed4d" alt="Screenshot 2024-10-02 at 05 38 55"/>
+      <img width="400" alt="Screenshot 2024-10-04 at 00 19 16" src="https://github.com/user-attachments/assets/60787b34-abc8-4a14-b764-2dd208c87be5">
       <p>Description for Image 1</p>
     </td>
     <td>
@@ -163,9 +167,13 @@ npm start
     </td>
   </tr>
   <tr>
-    <td colspan="2">
+    <td>
       <img width="400" src="https://github.com/user-attachments/assets/4dce745d-4942-4948-904d-52ae4b7cf912" alt="Screenshot 2024-10-02 at 05 41 09"/>
       <p>Description for Image 5</p>
+    </td>
+    <td>
+      <img width="400" alt="Screenshot 2024-10-04 at 00 19 48" src="https://github.com/user-attachments/assets/accae0ee-2398-4e49-b664-39910a945719">
+      <p>Description for Image 6</p>
     </td>
   </tr>
 </table>
