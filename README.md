@@ -87,7 +87,7 @@ This is the **Thyme Bank International Payment System** that allows customers to
 | **Backend**        | Node.js (Express)                                  |
 | **Database**       | MongoDB (for storing customer and transaction data securely) |
 | **Authentication** | JWT (JSON Web Token for customer and employee login sessions) |
-| **Security**       | bcrypt, Helmet, SSL, Express Brute, recaptcha                 |
+| **Security**       | bcrypt, Helmet, SSL, Express Brute, recaptcha, CSFR token                 |
 
 ---
 
