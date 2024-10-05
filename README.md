@@ -127,6 +127,18 @@ This is the **Thyme Bank International Payment System** that allows customers to
 ```
  npm install bcryptjs
  ```
+```
+npm install react-router-dom
+```
+```
+npm install react-google-recaptcha
+```
+```
+npm install axios
+```
+```
+npm install node-fetch
+```
 
 3. Set up environment variables: Add to the .env file in the root directory and add the following variables:
 ```
@@ -134,6 +146,8 @@ MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 SSL_CERT=your_ssl_certificate_path
 SSL_KEY=your_ssl_key_path
+RECAPTCHA_SITE_KEY=your_site_key_from_google
+RECAPTCHA_SECRET_KEY=your_secret_key_from_google
 ```
 4. Run the app:
 ```
