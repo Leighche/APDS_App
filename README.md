@@ -145,6 +145,9 @@ npm install cross-env --save-dev
 ```
 npm install express jsonwebtoken dotenv
 ```
+```
+npm i react-helmet-async
+```
 
 3. Set up environment variables: Add to the .env file in the root directory and add the following variables:
 ```
