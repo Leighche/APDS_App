@@ -139,6 +139,12 @@ npm install axios
 ```
 npm install node-fetch
 ```
+```
+npm install cross-env --save-dev
+```
+```
+npm install express jsonwebtoken dotenv
+```
 
 3. Set up environment variables: Add to the .env file in the root directory and add the following variables:
 ```
