@@ -25,6 +25,7 @@ This is the **Thyme Bank International Payment System** that allows customers to
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [Security Considerations](#security-considerations)
+- [References](references)
 - [License](#license)
 
    <img src="https://github.com/user-attachments/assets/b84f7ecf-e714-42e1-92da-5e56f49f1b7f" width="200"/>
@@ -260,6 +261,7 @@ We welcome contributions to improve the Thyme Bank International Payment System!
        <img src="https://github.com/user-attachments/assets/160fb321-8c18-473b-8962-63eefba43e6b" width="260"/>
 </div>
 
+## References 
 
 ## License
 
