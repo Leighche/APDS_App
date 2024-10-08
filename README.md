@@ -261,6 +261,21 @@ We welcome contributions to improve the Thyme Bank International Payment System!
        <img src="https://github.com/user-attachments/assets/160fb321-8c18-473b-8962-63eefba43e6b" width="260"/>
 </div>
 
+## Demo Video
+Watch our demo video to see Thyme Bank in action:
+
+<img src ="recording copy.gif"  />
+
+<div align="left">
+  <img src="https://media3.giphy.com/media/rrOif8vmuM6g05Zha5/giphy.gif?cid=6c09b9525yudzzl1gio0aotte4jpryu1uy7dlflc01rk9s3i&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" alt="Cloud Image" width="300">
+</div>
+
+
+<a href="https://www.youtube.com/watch?v=N8jWx4ui780&feature=youtu.be" target="_blank">
+  <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Icon">
+</a>
+<p>
+  
 ## References 
 
 GuriaSoft. 2024. JWT Secret, 2024. [Online]. Available at: https://guriasoft.com/server-side/node-js/jwt-secret [Accessed 01 October 2024].
