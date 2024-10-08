@@ -271,5 +271,5 @@ GuriaSoft. 2024. Hashing, 2024. [Online]. Available at: https://guriasoft.com/se
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
--by Leighché Jaikarran, Tanya Govender, Naiya Haribhai and Vikhayle Sewnundan
+-by Leighché Jaikarran, Tanya Govender, Vikhayle Sewnundan and Naiya Haribhai.  
   
