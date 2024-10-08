@@ -266,6 +266,7 @@ We welcome contributions to improve the Thyme Bank International Payment System!
 GuriaSoft. 2024. JWT Secret, 2024. [Online]. Available at: https://guriasoft.com/server-side/node-js/jwt-secret [Accessed 01 October 2024].
 GuriaSoft. 2024. Salting, 2024. [Online]. Available at: https://guriasoft.com/server-side/node-js/salting [Accessed 01 October 2024].
 GuriaSoft. 2024. Hashing, 2024. [Online]. Available at: https://guriasoft.com/server-side/node-js/hashing [Accessed 01 October 2024].
+The IIE, 2024. Application Development Security [APDS7311 Module Outline]. The Independent Institute of Education. Unpublished. 
 
 ## License
 
