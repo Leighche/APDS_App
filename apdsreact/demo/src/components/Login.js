@@ -3,16 +3,20 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
-import ReCAPTCHA from 'react-google-recaptcha'; // Import reCAPTCHA
+import ReCAPTCHA from 'react-google-recaptcha'; 
 import './Views/Login.css';
- 
+
+// Code Attribution:
+// Authour:guriasoft
+// Link: https://guriasoft.com/server-side/node-js/jwt-secret
+
 function Login() {
   const [accountNumber, setAccountNumber] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [loginAttempts, setLoginAttempts] = useState(0); // Track login attempts
-  const [showCaptcha, setShowCaptcha] = useState(false); // To show reCAPTCHA
-  const [captchaToken, setCaptchaToken] = useState(null); // Store reCAPTCHA token
+  const [loginAttempts, setLoginAttempts] = useState(0); 
+  const [showCaptcha, setShowCaptcha] = useState(false); 
+  const [captchaToken, setCaptchaToken] = useState(null); 
   const navigate = useNavigate();
  
   // Google reCAPTCHA site key
@@ -32,7 +36,7 @@ function Login() {
         accountNumber,
         username,
         password,
-        captchaToken, // Send captcha token to the backend if it exists
+        captchaToken, // Send captcha token to the backend 
       });
  
       sessionStorage.setItem("username", username);
@@ -54,7 +58,7 @@ function Login() {
     } catch (error) {
       console.error('Login error:', error);
  
-      // Increment login attempts on failure
+      
       setLoginAttempts(prevAttempts => prevAttempts + 1);
  
       if (loginAttempts + 1 >= 5) {
@@ -67,7 +71,7 @@ function Login() {
   };
  
   const handleCaptchaChange = (token) => {
-    setCaptchaToken(token); // Set reCAPTCHA token
+    setCaptchaToken(token); 
   };
  
   return (
@@ -109,7 +113,7 @@ function Login() {
               required 
             />
 </div>
-          {/* Show CAPTCHA only after 5 failed login attempts */}
+         
           {showCaptcha && (
 <ReCAPTCHA
               sitekey={recaptchaSiteKey}
@@ -118,13 +122,13 @@ function Login() {
           )}
 <button type="submit" className="btn-primary">Login</button>
 </form>
-<a href="/register">Have an Account? Register?</a>
+<a href="/register">Dont have an Account? Register here</a>
 <div className="separator">
 <span>OR</span>
 </div>
 <button onClick={() => navigate('/admin')} className="btn-secondary">
 <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: '8px' }} />
-          Admin Registration
+          Admin Login
 </button>
 </div>
 </div>

@@ -6,6 +6,11 @@ const User = require('../models/User');
 const { validateRegistration, validateLogin, checkValidationResult } = require('../middleware/validation');
 const ExpressBrute = require('express-brute');
 
+// Code Attribution:
+// Authour:guriasoft
+// Link: https://guriasoft.com/server-side/node-js/jwt-secret
+
+
 const router = express.Router();
 
 // Brute force middleware to protect against too many login/register attempts

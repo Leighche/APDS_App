@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react'; 
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
-import './Views/Recipient.css'; // Optional: Add your CSS styles here
+import { useNavigate } from 'react-router-dom'; 
+import './Views/Recipient.css'; 
+
+// Code Attribution:
+// Authour:guriasoft
+// Link: https://guriasoft.com/server-side/node-js/jwt-secret
+
 
 const banks = [
   'First National Bank',
@@ -53,7 +58,7 @@ function Recipient() {
       console.log('Recipient added:', response.data);
       
       // Redirect to the home page after a successful submission
-      navigate('/home'); // Use navigate to redirect
+      navigate('/home'); 
     } catch (error) {
       console.error('Error adding recipient:', error);
     }

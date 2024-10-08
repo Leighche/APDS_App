@@ -1,68 +1,39 @@
 body {
     margin: 0;
     padding: 0;
-}
-
-.Pay-background {
-    background-image: url('https://images.unsplash.com/photo-1493510296082-689a0d42701b?q=80&w=3281&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: url('https://images.unsplash.com/photo-1521571086300-579bd981bbb6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Background image */
     background-repeat: no-repeat;
-    background-size: cover; /* Ensure it covers the full viewport */
+    background-size: cover;
     background-attachment: fixed;
     height: 100vh;
 }
 
-.pay-container {
-    text-align: center; /* Center align the text */
-    padding: 20px; /* Add some padding around the container */
-    border-radius: 15px; /* Round the corners */
-    max-width: 600px; /* Limit max width for the form */
-    margin: auto; /* Center the form */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0); /* Add shadow for depth */
+
+
+.payments-table {
+    width: 90%; /* Table width */
+    border-collapse: collapse; /* Collapse borders */
+    margin: 20px auto; /* Center the table horizontally */
+    background-size: cover; /* Ensure the image covers the entire table */
+    background-repeat: no-repeat; /* Prevent background from repeating */
 }
 
-h1 {
-    color: #477f4b;
-    margin-bottom: 30px;
-}
-
-.form-group {
-    margin-bottom: 20px; /* Space between form groups */
+.payments-table th, .payments-table td {
+    border: 1px solid #ccc; /* Border for table cells */
+    padding: 10px; /* Padding inside cells */
     text-align: left; /* Align text to the left */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better text visibility */
 }
 
-label {
-    font-weight: bold; /* Bold label text */
+.payments-table th {
+    background-color: #477f4b; /* Header background color */
+    color: white; /* Header text color */
 }
 
-input {
-    width: 96%; /* Full width for inputs and selects */
-    padding: 10px; /* Add some padding */
-    border-radius: 5px; /* Round corners */
-    border: 1px solid #ccc; /* Border style */
-    font-size: 16px; /* Font size */
+.payments-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.5); /* Alternate row color with transparency */
 }
 
-select {
-    width: 100%; /* Ensures it takes the full width of the container */
-    padding: 10px; /* Padding inside the dropdown */
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 4px; /* Rounded corners */
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
-    height: 40px; /* Adjust this value to increase the height */
-    font-size: 16px; /* Adjust font size for better visibility */
-    /* Optionally, you can add more styles like color, background-color, etc. */
-}
-
-.submit-button {
-    background-color: #477f4b; /* Button color */
-    color: white; /* Button text color */
-    border: none; /* Remove border */
-    padding: 15px 20px; /* Padding for the button */
-    border-radius: 5px; /* Round corners */
-    font-size: 18px; /* Font size */
-    cursor: pointer; /* Change cursor on hover */
-}
-
-.submit-button:hover {
-    background-color: #3a5a3f; /* Darker button color on hover */
+.payments-table tr:hover {
+    background-color: rgba(226, 226, 226, 0.8); /* Highlight row on hover with transparency */
 }

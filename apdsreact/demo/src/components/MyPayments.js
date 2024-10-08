@@ -12,7 +12,7 @@ function MyPayments() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // Fetch payments from the API when the component mounts
+   
     const fetchPayments = async () => {
       try {
         const response = await axiosInstance.get('/pay'); 
@@ -26,27 +26,39 @@ function MyPayments() {
     };
 
     fetchPayments();
-  }, []); // Empty dependency array means this effect runs once when the component mounts
+  }, []); 
 
   return (
     <div className="payments-list-container">
       <h1>Your Payments</h1>
-      {error && <div className="error-message">{error}</div>} {/* Display error message */}
+      {error && <div className="error-message">{error}</div>} 
 
-      <ul className="payments-list">
-        {payments.length > 0 ? (
-          payments.map((payment) => (
-            <li key={payment._id}>
-              <strong>Amount:</strong> {payment.amount} {payment.currency} <br />
-              <strong>Recipient:</strong> {payment.recipient} <br />
-              <strong>SWIFT Code:</strong> {payment.swiftCode} <br />
-              <strong>Reference:</strong> {payment.paymentReference} <br />
-            </li>
-          ))
-        ) : (
-          <li>No payments found.</li>
-        )}
-      </ul>
+      {payments.length > 0 ? (
+        <table className="payments-table">
+          <thead>
+            <tr>
+              <th>Amount</th>
+              <th>Currency</th>
+              <th>Recipient</th>
+              <th>SWIFT Code</th>
+              <th>Reference</th>
+            </tr>
+          </thead>
+          <tbody>
+            {payments.map((payment) => (
+              <tr key={payment._id}>
+                <td>{payment.amount}</td>
+                <td>{payment.currency}</td>
+                <td>{payment.recipient}</td>
+                <td>{payment.swiftCode}</td>
+                <td>{payment.paymentReference}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <div>No payments found.</div>
+      )}
     </div>
   );
 }

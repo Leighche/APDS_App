@@ -10,6 +10,10 @@ const fs = require('fs');
 const path = require('path');
 const jwt = require('jsonwebtoken');
 
+// Code Attribution:
+// Authour:guriasoft
+// Link: https://guriasoft.com/server-side/node-js/api-security
+
 // Load environment variables
 dotenv.config();
 
@@ -74,7 +78,7 @@ async function verifyCaptcha(captchaToken) {
     return result.success;
 }
 
-// Define your login route with reCAPTCHA integration
+
 authRoutes.post('/login', bruteforce.prevent, async (req, res) => {
     const { username, password, captchaToken } = req.body;
 
@@ -86,7 +90,7 @@ authRoutes.post('/login', bruteforce.prevent, async (req, res) => {
         }
     }
 
-    // Proceed with your login logic (authenticate user)
+    
     if (username === 'test' && password === 'password') {
         return res.status(200).json({ message: 'Login successful' });
     } else {
@@ -118,6 +122,7 @@ mongoose.connect(process.env.MONGO_URI)
 app.get('/protected', authenticateToken, (req, res) => {
         res.send(`Hello ${req.user.username}, you accessed a protected route!`);
       });
+
 // Start the HTTPS server
 const PORT = process.env.PORT || 3002;
 server.listen(PORT, () => console.log(`Server running on https://localhost:${PORT}`));

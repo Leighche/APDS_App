@@ -31,13 +31,15 @@ function Home() {
           </button>
           <button 
             className="big-button" 
-            style={{ backgroundImage: 'url(https://cdn.dribbble.com/users/419466/screenshots/7187243/media/993dc71269f5ab2a9faff9fe9db69a60.gif)' }} 
+            style={{ backgroundImage: 'https://cdn.dribbble.com/users/846207/screenshots/6637248/invoice_receipt_animation.gif' }} 
             onClick={() => navigate('/my-payments')} // Navigate to the Recipients page
           >
+
             <span>MY PAYMENTS</span>
-          </button>
+          </button >
         </div>
-       <button onClick={handleLogout} className="btn btn-danger">
+       <button 
+       onClick={handleLogout} className="small-button">
 Logout
        </button>
       </div>

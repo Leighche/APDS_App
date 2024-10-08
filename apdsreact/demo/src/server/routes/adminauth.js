@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
+// Code Attribution:
+// Authour:guriasoft
+// Link: https://guriasoft.com/server-side/node-js/ci-cd
+
 const mockAuth = {
     isAuthenticated: false,
     authenticate(cb) {

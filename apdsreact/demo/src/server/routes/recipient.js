@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
+// Code Attribution:
+// Authour:guriasoft
+// Link: https://guriasoft.com/server-side/node-js/ci-cd
+
 // Define Recipient schema and model (if not defined elsewhere)
 const recipientSchema = new mongoose.Schema({
     username:{type: String, required: true},

@@ -47,6 +47,24 @@ body {
     z-index: 2;
 }
 
+.small-button {
+    margin-top: 2%;
+    background-size: cover;
+    background-position: center;
+    background-color: #d37407;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
 /* Overlay for better text visibility */
 .big-button::after {
     content: '';

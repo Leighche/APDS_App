@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Payment = require('../models/Pay');
 
+// Code Attribution:
+// Authour:guriasoft
+// Link: https://guriasoft.com/server-side/node-js/ci-cd
+
+
 // POST endpoint to add new payment
 router.post('/', async (req, res) => {
     const { username, amount, currency, recipient, swiftCode, paymentReference } = req.body;

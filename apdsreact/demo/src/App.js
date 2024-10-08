@@ -6,10 +6,14 @@ import Register from './components/Register';
 import Home from './components/Home';
 import Recipient from './components/Recipient'; 
 import Pay from './components/Pay';
-import MyPayments from './components/MyPayments'; // Import MyPayments component
+import MyPayments from './components/MyPayments'; 
 import AdminRegister from './components/AdminRegister';
 import { Helmet } from "react-helmet-async";
-import './App.css'; // Optional: Add your CSS styles here
+import './App.css'; 
+
+// Code Attribution:
+// Authour:guriasoft
+// Link: https://guriasoft.com/server-side/node-js/npm
 
 function App() {
   return (

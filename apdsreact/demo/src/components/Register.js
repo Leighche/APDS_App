@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // or import your configured axios instance
+import axios from 'axios'; 
 import { useNavigate } from 'react-router-dom';
-import './Views/Register.css'; // Import your CSS file
+import './Views/Register.css'; 
+
+// Code Attribution:
+// Authour:guriasoft
+// Link: https://guriasoft.com/server-side/node-js/salting
+
 
 const axiosInstance = axios.create({
-  baseURL: '/api/auth',
+  baseURL: '/api/auth', // uses proxy
 });
 
 const Register = () => {
