@@ -3,9 +3,8 @@ import axios from 'axios'; // or import your configured axios instance
 import { useNavigate } from 'react-router-dom';
 import './Views/Register.css'; // Import your CSS file
 
-// Create an Axios instance with a base URL
 const axiosInstance = axios.create({
-  baseURL: 'https://localhost:3002/api/auth', // Base URL for the auth API
+  baseURL: '/api/auth',
 });
 
 const Register = () => {
@@ -57,8 +56,10 @@ const Register = () => {
         hasError = true;
     }
 
-    if (password.length < 6) { // Example: Minimum password length
-        setPasswordError('Password must be at least 6 characters long');
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+ 
+    if (!passwordRegex.test(password)) {
+setPasswordError('Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.');
         hasError = true;
     }
 

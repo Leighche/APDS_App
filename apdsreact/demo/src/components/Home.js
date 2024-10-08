@@ -5,6 +5,11 @@ import './Views/Home.css'; // Ensure you import the CSS file
 function Home() {
   const navigate = useNavigate(); // Initialize the navigate function
 
+  const handleLogout = () => {
+    sessionStorage.removeItem('username');
+     navigate('/login');
+  }
+
   return (
     <div className="Home-background">
       <div className="home-container">
@@ -24,7 +29,17 @@ function Home() {
           >
             <span>PAY PORTAL</span>
           </button>
+          <button 
+            className="big-button" 
+            style={{ backgroundImage: 'url(https://cdn.dribbble.com/users/419466/screenshots/7187243/media/993dc71269f5ab2a9faff9fe9db69a60.gif)' }} 
+            onClick={() => navigate('/my-payments')} // Navigate to the Recipients page
+          >
+            <span>MY PAYMENTS</span>
+          </button>
         </div>
+       <button onClick={handleLogout} className="btn btn-danger">
+Logout
+       </button>
       </div>
     </div>
   );

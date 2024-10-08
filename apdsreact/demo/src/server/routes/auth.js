@@ -1,7 +1,7 @@
 // server/routes/auth.js
-
+const jwt = require('jsonwebtoken');
 const express = require('express');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const { validateRegistration, validateLogin, checkValidationResult } = require('../middleware/validation');
 const ExpressBrute = require('express-brute');
@@ -60,7 +60,17 @@ router.post('/login', bruteforce.prevent, validateLogin, checkValidationResult, 
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
-        res.status(200).json({ message: 'Login successful' });
+        const payload = {
+            username : username,
+            password : password
+          };
+       
+          const token = jwt.sign(payload, process.env.JWT_SECRET, {
+            expiresIn: '1h'  
+          });
+ 
+          res.status(200).json({ message: 'Login successful', token: token, name: req.body.name});
+          return token;
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server error' });
